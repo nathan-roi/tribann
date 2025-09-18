@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tribann/pages/map/map.dart';
+import 'package:tribann/pages/home.dart';
 
 void main(){
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Tribann',
       debugShowCheckedModeBanner: false,
-      home: MapPage(),
+      home: Home(),
     );
   }
 }

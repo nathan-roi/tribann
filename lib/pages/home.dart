@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tribann/pages/components/navBar.dart';
+import 'package:tribann/pages/map/map.dart';
+import 'package:tribann/pages/messages.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -9,10 +11,55 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _selectedIndex = 0;
-  
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
+  // int _selectedIndex = 0;
+  var selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
   }
+
+  @override
+  Widget build(BuildContext context){
+
+    Widget page;
+    switch (selectedIndex){
+      case 0:
+        page = const MapPage();
+        break;
+      case 1:
+        page = const Messages();
+      default:
+        throw UnimplementedError('no widget for $selectedIndex');
+    }
+
+    return Scaffold(
+      body: page,
+      bottomNavigationBar: NavBar(
+        currentIndex: selectedIndex,
+        onTap: _onItemTapped,
+      ),
+    );
+  }
+  
+  // final List<Widget> _pages = [
+  //   const MapPage(),
+  // ];
+
+
+
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Scaffold(
+  //     body: IndexedStack(
+  //       index: _selectedIndex,
+  //       children: _pages,
+  //     ),
+  //     bottomNavigationBar: NavBar(
+  //       currentIndex: _selectedIndex,
+  //       onTap: _onItemTapped,
+  //     ),
+  //   );
+  // }
 }

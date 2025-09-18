@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class NavBar extends StatelessWidget {
-  const NavBar({super.key});
+  final int currentIndex;
+  final ValueChanged<int> onTap;
+
+  const NavBar({
+    super.key,
+    required this.currentIndex,
+    required this.onTap
+    });
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +37,8 @@ class NavBar extends StatelessWidget {
       child: ClipRRect(
         borderRadius: const BorderRadius.all(Radius.circular(12)),
         child: BottomNavigationBar(
+          currentIndex: currentIndex,
+          onTap: onTap,
           backgroundColor: Colors.white,
           items: const [
             BottomNavigationBarItem(
