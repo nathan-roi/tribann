@@ -42,24 +42,4 @@ class _HomeState extends State<Home> {
       ),
     );
   }
-  
-  // final List<Widget> _pages = [
-  //   const MapPage(),
-  // ];
-
-
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     body: IndexedStack(
-  //       index: _selectedIndex,
-  //       children: _pages,
-  //     ),
-  //     bottomNavigationBar: NavBar(
-  //       currentIndex: _selectedIndex,
-  //       onTap: _onItemTapped,
-  //     ),
-  //   );
-  // }
 }
