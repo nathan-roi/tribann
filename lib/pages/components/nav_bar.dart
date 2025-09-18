@@ -24,15 +24,14 @@ class NavBar extends StatelessWidget {
 
     return Container(
       margin: const EdgeInsets.all(padding),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
         boxShadow: const [
           BoxShadow(color: Colors.black26, blurRadius: 4),
         ],
-      ),
-      // La hauteur minimale = carré actif + padding
-      padding: const EdgeInsets.all(10),
+      ),      
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: List.generate(items.length, (index) {
@@ -40,7 +39,9 @@ class NavBar extends StatelessWidget {
 
           return GestureDetector(
             onTap: () => onTap(index),
-            child: Container(
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeInOutCirc,
               width: activeSquareSize,
               height: activeSquareSize,
               decoration: BoxDecoration(
