@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tribann/pages/components/navBar.dart';
+import 'package:tribann/pages/components/nav_bar.dart';
 import 'package:tribann/pages/map/map.dart';
 import 'package:tribann/pages/messages.dart';
 
