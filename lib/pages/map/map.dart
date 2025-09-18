@@ -5,24 +5,7 @@ class MapPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: navigationBar(),
-    );
+    return const Placeholder();
   }
 
-  Widget navigationBar() {
-    return BottomNavigationBar(
-      type: BottomNavigationBarType.fixed,
-      items: const [
-        BottomNavigationBarItem(
-          label: 'map',
-          icon: Icon(Icons.map_outlined)
-        ),
-        BottomNavigationBarItem(
-          label: 'messages',
-          icon: Icon(Icons.messenger_outline_sharp)
-        ),
-      ],
-    );
-  }
 }
